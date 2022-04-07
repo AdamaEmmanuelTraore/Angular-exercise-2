@@ -5,12 +5,18 @@ import { Component } from "@angular/core";
 // 3- CREO IL MIO COMPONENTE CHE AVRA' UN SOLO SELETTORE
 @Component ({
     selector: 'events-list',
-    templateUrl: './events-list.component.html'
+    template: `
+        <div>
+            <h1>Angular Events</h1>
+            <hr>
+            <event-thumbnail [event]="event1"></event-thumbnail>
+        </div>
+    `
 })
 
 // 1- ESPORTO LA MIA CLASSE
 export class EventsListComponent {
-    event = {
+    event1 = {
         id: 1,
         name: "Angular connect",
         data: "07/04/2022",
