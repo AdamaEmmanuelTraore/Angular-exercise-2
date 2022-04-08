@@ -33,3 +33,15 @@ a {
     background-color: red;
     text-decoration: none;
 }
+.gr {
+    color: rgb(0, 255, 0);
+}
+.b {
+    font-weight: bold;
+}
+.org {
+    color: rgb(255, 204, 0);
+}
+.rd {
+    color: red;
+}
