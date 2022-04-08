@@ -2,6 +2,7 @@
 import { NgSwitchDefault } from "@angular/common";
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
+declare let toastr: any
 @Component({
     selector: 'event-thumbnail',
     template: `
