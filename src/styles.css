@@ -3,13 +3,33 @@ body{
     background-color: #141850;
 }
 .info{
+    display: inline-block;
+    width: 500px;
+    height: 330px;
+    align-items: stretch;
     color: white;
-    margin-left: 20px;
+    margin: 30px;
     border: hidden 2px blanchedalmond;
-    width: 350px;
     background-color: dodgerblue;
+    cursor: pointer;
 }
+
 h1{
     color: white;
     margin-left: 30px;
+}
+.hoverwell {
+    background-attachment: fixed;
+    background-color: aqua;
+}
+.bgd{
+    background-color: red;
+    padding: 20px;
+}
+a {
+    padding: 20px;
+    cursor: pointer;
+    border: hidden;
+    background-color: red;
+    text-decoration: none;
 }
