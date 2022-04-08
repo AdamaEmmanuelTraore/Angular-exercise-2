@@ -4,8 +4,8 @@ body{
 }
 .info{
     display: inline-block;
-    width: 500px;
-    height: 410px;
+    width: 380px;
+    height: 250px;
     align-items: stretch;
     color: white;
     margin: 30px;
@@ -14,7 +14,7 @@ body{
     cursor: pointer;
 }
 
-h1, h3{
+h1{
     color: white;
     margin-left: 30px;
 }
@@ -32,7 +32,4 @@ a {
     border: hidden;
     background-color: red;
     text-decoration: none;
-}
-span {
-    color: rgb(0, 255, 0);
 }
