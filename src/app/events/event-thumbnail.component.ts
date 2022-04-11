@@ -2,7 +2,6 @@
 import { NgSwitchDefault } from "@angular/common";
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
-declare let toastr: any
 @Component({
     selector: 'event-thumbnail',
     template: `
@@ -14,7 +13,7 @@ declare let toastr: any
             Time: {{event?.time}}
             <span *ngSwitchCase="'8:00 am'">(Early start)</span>
             <span *ngSwitchCase="'10:00 am'">(Late start)</span>
-            <span *ngSwitchDefault="'9:00 am'">(Normal start)</span>
+            <span *ngSwitchDefault>(Normal start)</span>
         </div>
         <div>Price: {{event?.price}}</div>
         <div>Image: {{event?.imageUrl}}</div>

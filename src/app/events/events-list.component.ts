@@ -11,7 +11,7 @@ import { EventService } from "./service/event.service";
         <div>
             <h1>Angular Events</h1>
             <hr>
-            <event-thumbnail (clicked)="handleClicked($event)" *ngFor="let event of events" [event]="event"></event-thumbnail>
+            <event-thumbnail (clicked)="handleClicked(event.name)" *ngFor="let event of events" [event]="event"></event-thumbnail>
         </div>
     `
 })
