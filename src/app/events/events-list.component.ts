@@ -26,6 +26,6 @@ export class EventsListComponent implements OnInit {
     this.events = this.eventService.getEventList()
   }
   handleClicked(data: any) {
-    console.log("received: ", data)
+    console.log("received: "+ data)
   }
 }
