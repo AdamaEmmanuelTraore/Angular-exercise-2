@@ -21,6 +21,7 @@ declare let toastr: any
         <div>Adress: {{event?.location.address}}</div>
         <div>City: {{event?.location.city}}</div>
         <div>Country: {{event?.location.country}}</div>
+        <div><button (click)="clickMe()">Click!</button></div>
     </div>
     `
 })
@@ -28,6 +29,7 @@ declare let toastr: any
 export class EventThumbnailComponent{
     /* INPUT È UN DECORATORE CHE DICE AD ANGULAR CHE QUESTO EVENTO VERRA' PASSATO AD UN ALTRO COMPONENTE */
     @Input() event: any
+    @Output() clicked = new EventEmitter()
 
     getStartTimeClass(): any {
         if(this.event && this.event.time=== "8:00 am"){
@@ -37,5 +39,8 @@ export class EventThumbnailComponent{
         } else if(this.event && this.event.time=== "10:00 am"){
             return ["gr", "b"]
         }
+    }
+    clickMe() {
+        this.clicked.emit(this.event.name)
     }
 }
