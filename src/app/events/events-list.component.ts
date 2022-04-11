@@ -6,7 +6,6 @@ import { EventService } from "./service/event.service";
 
 // 3- CREO IL MIO COMPONENTE CHE AVRA' UN SOLO SELETTORE
 @Component ({
-    selector: 'events-list',
     template: `
         <div>
             <h1>Angular Events</h1>

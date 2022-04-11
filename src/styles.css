@@ -76,7 +76,6 @@ h1{
   }
   
   .subnav-content a {
-    float: left;
     color: rgb(229, 255, 0);
     text-decoration: none;
   }
@@ -89,3 +88,17 @@ h1{
   .subnav:hover .subnav-content {
     display: grid;
   }
+  .wc{
+      color: white;
+      float: right;
+      margin-right: 10px;
+  }
+  .search{
+      padding: 15px;
+  }
+  .info:hover{
+      background-color: rgb(0, 208, 208);
+  }
+  .container {
+      padding-left: 20px; padding-right: 20px;
+    }

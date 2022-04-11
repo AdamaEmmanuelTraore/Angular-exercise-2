@@ -15,7 +15,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
             <span *ngSwitchCase="'10:00 am'">(Late start)</span>
             <span *ngSwitchDefault>(Normal start)</span>
         </div>
-        <div>Price: {{event?.price}}</div>
+        <div>Price: {{event?.price}}\$</div>
         <div>Image: {{event?.imageUrl}}</div>
         <div>Adress: {{event?.location.address}}</div>
         <div>City: {{event?.location.city}}</div>

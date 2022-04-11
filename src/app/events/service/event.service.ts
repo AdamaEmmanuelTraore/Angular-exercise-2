@@ -6,6 +6,9 @@ export class EventService {
     getEventList() {
         return EVENTS
     }
+    getElement(id: number) {
+      return EVENTS.find(event => event.id === id)
+    }
 }
 
 // QUESTI DATI SONO TEMPORANEI, ANDRANNO MESSI POI IN UN DB POI
