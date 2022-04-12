@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
     template: `
@@ -9,11 +10,18 @@ import { Component } from "@angular/core";
             <br/>
             <br/>
             <button type="submit" class="sBtn">Save</button>
-            <button type="button" class="cBtn">Cancel</button>
+            <button type="button" class="cBtn" (click)="stop()">Cancel</button>
         </div>
     `
 })
-
+// QUI AGGIUNGO UN METODO AL MIO PULSANTE "CANCEL" AL QUALE PASSO IL "ROUTER" PER POTER NAVIGARE IN UN ALTRA PAGINA
 export class CreateEventComponent {
+    isDirty:boolean = true
+    constructor(private router: Router) {
+
+    }
+    stop() {
+        this.router.navigate(['/events'])
+    }
 
 }

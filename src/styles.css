@@ -102,3 +102,8 @@ h1{
   .container {
       padding-left: 20px; padding-right: 20px;
     }
+    .errorMessage{
+      margin-top: 150px;
+      font-size: 170px;
+      text-align: center;
+    }
