@@ -1,7 +1,7 @@
 <div class="navbar">
         <a href="#home">ngEvents</a>
-        <a href="#AllEvents">All Events</a>
-        <a href="#CreateEvent">Create Event</a>
+        <a [routerLink]="'/events'" href="#AllEvents">All Events</a>
+        <a [routerLink]="['/events/new']" href="#CreateEvent">Create Event</a>
         <div class="subnav">
           <button class="subnavbtn">Events</button>
           <div class="subnav-content">
