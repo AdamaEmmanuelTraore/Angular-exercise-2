@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component} from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { EventService } from "../service/event.service";
 
 // QUI DEFINISCO NELLO SPECIFICO COSA MI DEVE MOSTRARE IL MIO SITO
@@ -7,11 +8,11 @@ import { EventService } from "../service/event.service";
 })
 
 export class EventDetails {
-    event: any
-    constructor(private eventService: EventService) {
+    event: any  // QUI RICCHIAMO IL MIO SERVIZIO   |   QUI CHIAMO UN COSTRUTTO/SERVIZIO CHE MI PERMETTERA' DI NON SPECIFICARE L'ID
+    constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }
-    ngOnInit() {
-        this.event = this.eventService.getElement(1)
+    ngOnInit() {                // IL + QUI SERVE A CASTARLO/TRASMETTERLO COME NUMERO
+        this.event = this.eventService.getElement(+this.route.snapshot.params['id'])
     }
 }

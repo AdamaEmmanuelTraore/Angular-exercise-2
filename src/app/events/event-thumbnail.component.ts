@@ -5,9 +5,9 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 @Component({
     selector: 'event-thumbnail',
     template: `
-    <div class="info">
+    <div [routerLink]="['/events', event.id]" class="info">
         <div><h1>{{event.name}}</h1></div>
-        <div>Data: {{event?.data}}</div>
+        <div>Data: {{event?.date}}</div>
    
         <div [ngClass]="getStartTimeClass()" [ngSwitch]="event?.time">
             Time: {{event?.time}}
@@ -16,7 +16,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
             <span *ngSwitchDefault>(Normal start)</span>
         </div>
         <div>Price: {{event?.price}}\$</div>
-        <div>Image: <img src="{{event?.imageUrl}}" alt=""></div>
+        <div>Image: <img src="{{event?.imageUrl}}"></div>
         <div>Adress: {{event?.location.address}}</div>
         <div>City: {{event?.location.city}}</div>
         <div>Country: {{event?.location.country}}</div>
