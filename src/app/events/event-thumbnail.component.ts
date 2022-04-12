@@ -16,7 +16,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
             <span *ngSwitchDefault>(Normal start)</span>
         </div>
         <div>Price: {{event?.price}}\$</div>
-        <div>Image: {{event?.imageUrl}}</div>
+        <div>Image: <img src="{{event?.imageUrl}}" alt=""></div>
         <div>Adress: {{event?.location.address}}</div>
         <div>City: {{event?.location.city}}</div>
         <div>Country: {{event?.location.country}}</div>
