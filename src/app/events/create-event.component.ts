@@ -7,8 +7,8 @@ import { Router } from "@angular/router";
         <hr>
         <div>
             <h3>[Create Event From will go here]</h3>
-            <br/>
-            <br/>
+            <br>
+            <br>
             <button type="submit" class="sBtn">Save</button>
             <button type="button" class="cBtn" (click)="stop()">Cancel</button>
         </div>
