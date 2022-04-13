@@ -7,10 +7,12 @@ import { EventService } from "./service/event.service";
 // 3- CREO IL MIO COMPONENTE CHE AVRA' UN SOLO SELETTORE
 @Component ({
     template: `
-        <div>
+        <div class="info">
             <h1>Angular Events</h1>
             <hr>
-            <event-thumbnail (clicked)="handleClicked(event.name)" *ngFor="let event of events" [event]="event"></event-thumbnail>
+            <div *ngFor="let event of events" class="pick">
+            <event-thumbnail (clicked)="handleClicked(event.name)" [event]="event"></event-thumbnail>
+            </div>
         </div>
     `
 })

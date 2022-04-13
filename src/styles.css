@@ -2,16 +2,9 @@
 body{
     background-color: #141850;
 }
-.info{
-    display: inline-block;
-    width: 380px;
-    height: 250px;
-    align-items: stretch;
+.info, .infos{
     color: white;
-    margin: 30px;
-    border: hidden 2px blanchedalmond;
-    background-color: dodgerblue;
-    cursor: pointer;
+    margin: 30px; 
 }
 
 h1{
@@ -96,7 +89,7 @@ h1{
   .search{
       padding: 15px;
   }
-  .info:hover{
+  .pick:hover{
       background-color: rgb(0, 208, 208);
   }
   .container {
@@ -107,3 +100,20 @@ h1{
       font-size: 170px;
       text-align: center;
     }
+    .foto {
+      height: 100px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+      padding: 10px;
+    }
+    .pick{
+      display: block;
+      align-content: space-between;
+      width: 350px;
+      background-color: dodgerblue;
+      margin: 50px;
+      display: inline-block;
+      cursor: pointer;
+  }
