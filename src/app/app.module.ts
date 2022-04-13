@@ -32,7 +32,7 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
     EventRouteActivator,
     {
       provide: 'canDeactivateCreateEvent',
-      useValue: checkDirtyState()
+      useValue: checkDirtyState
     }
   ],
   bootstrap: [EventsAppComponent]
@@ -40,6 +40,9 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
 export class AppModule { }
 
 // CREAZIONE DI UNA FUNZIONE PER LA GUARDIA "canDeactivateCreateEvent"
-export function checkDirtyState() {
-  return false
+export function checkDirtyState(component: CreateEventComponent) {
+  if(component.isDirty) {
+    return window.confirm('Are you sure? You have not complete the form')
+  }
+  return true
 }
