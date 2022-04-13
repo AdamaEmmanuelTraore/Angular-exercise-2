@@ -32,14 +32,14 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
     EventRouteActivator,
     {
       provide: 'canDeactivateCreateEvent',
-      useValue: checkDirtyState
+      useValue: checkDirtyState()
     }
   ],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
-export function checkDirtyState(component: CreateEventComponent) {
-  if(component.isDirty){
-    return window.confirm('Are you sure?, you have not save this event')
-  } return true
+
+// CREAZIONE DI UNA FUNZIONE PER LA GUARDIA "canDeactivateCreateEvent"
+export function checkDirtyState() {
+  return false
 }

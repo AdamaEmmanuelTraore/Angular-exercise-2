@@ -2,6 +2,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router } from "@angular/router";
 import { Injectable } from "@angular/core";
 import { EventService } from "../service/event.service";
 
+// CREAZIONE DI UN SERVIZIO PER LA GUARDIA "CanActivate"
 @Injectable()
 export class EventRouteActivator implements CanActivate{
     constructor(private eventService: EventService, private router: Router) {
