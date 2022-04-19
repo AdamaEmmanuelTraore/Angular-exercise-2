@@ -15,8 +15,6 @@ export class LoginComponent {
     
     login(formValues: any) {
         this.authenticate.loginUser(formValues.userName, formValues.passaword)
-    }
-    user() {
         this.router.navigate(['user/profile'])
     }
     stop() {
