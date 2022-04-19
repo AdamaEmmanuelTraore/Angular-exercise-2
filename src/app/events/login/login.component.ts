@@ -3,7 +3,17 @@ import { Router } from "@angular/router";
 import { AuthenticationService } from "./authentication.service";
 
 @Component({
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    styles: [`
+        .req{display: flex;
+            float: center;
+            color: red;
+            margin-left: 110px
+        }
+        label{
+            color: white;
+        }
+    `]
 })
 export class LoginComponent {
     userName: any
