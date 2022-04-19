@@ -21,7 +21,7 @@ import { EventService } from "./service/event.service";
 
 // 1- ESPORTO LA MIA CLASSE
 export class EventsListComponent implements OnInit {
-  events: any //IEvent[]
+  events!: IEvent[]
   constructor(private eventService: EventService, private route: ActivatedRoute) {
     
   }

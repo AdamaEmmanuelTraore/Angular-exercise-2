@@ -9,7 +9,7 @@ import { EventService } from "../service/event.service";
 })
 
 export class EventDetails {
-    event: any //IEvent // QUI RICCHIAMO IL MIO SERVIZIO   |   QUI CHIAMO UN COSTRUTTO/SERVIZIO CHE MI PERMETTERA' DI NON SPECIFICARE L'ID
+    event!: IEvent // QUI RICCHIAMO IL MIO SERVIZIO   |   QUI CHIAMO UN COSTRUTTO/SERVIZIO CHE MI PERMETTERA' DI NON SPECIFICARE L'ID
     constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }

@@ -10,7 +10,8 @@
       <a routerLinkActive="active" href="#careers">Careers</a>
     </div>
     </div>
-    <a routerLinkActive="active" [routerLink]="['user/profile']" class="welc">Welcome Traore</a>
+    <a *ngIf="!auth.isAuthenticated()" routerLinkActive="active" [routerLink]="['user/login']">Login</a>
+    <a *ngIf="auth.isAuthenticated()" routerLinkActive="active" [routerLink]="['user/profile']" class="welc">Welcome {{auth.currentUser.firstName}}</a>
     <div class="search">
       <input type="search" placeholder="Search Session">
       <button type="button">Search</button>

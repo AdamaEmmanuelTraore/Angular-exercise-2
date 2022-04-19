@@ -28,7 +28,7 @@ import { IEvent } from "./service/event.model";
 
 export class EventThumbnailComponent{
     /* INPUT È UN DECORATORE CHE DICE AD ANGULAR CHE QUESTO EVENTO VERRA' PASSATO AD UN ALTRO COMPONENTE */
-    @Input() event: any //IEvent
+    @Input() event!: IEvent
     @Output() clicked = new EventEmitter()
 
     getStartTimeClass(): any {
