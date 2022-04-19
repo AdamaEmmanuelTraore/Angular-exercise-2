@@ -6,7 +6,7 @@ import { Subject } from "rxjs";
 export class EventService {
     getEventList() {
       let subject= new Subject() // È UN OSSERVABILE (che serve per rendere asincrono i miei dati)
-      setTimeout(() => {subject.next(EVENTS); subject.complete();}, 100); // QUI SIMULO L'ASSINCRONIA CON "setTimeOut"(cosi facendo decido il tempo di caricamento dei dati)
+      setTimeout(() => {subject.next(EVENTS); subject.complete();}, 100) // QUI SIMULO L'ASSINCRONIA CON "setTimeOut"(cosi facendo decido il tempo di caricamento dei dati)
         return subject
     }
     getElement(id: number) {
