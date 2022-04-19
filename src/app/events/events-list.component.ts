@@ -3,6 +3,7 @@
 // 2- IMPORTO IL MIO COMPONENTE
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { IEvent } from "./service/event.model";
 import { EventService } from "./service/event.service";
 
 // 3- CREO IL MIO COMPONENTE CHE AVRA' UN SOLO SELETTORE
@@ -20,7 +21,7 @@ import { EventService } from "./service/event.service";
 
 // 1- ESPORTO LA MIA CLASSE
 export class EventsListComponent implements OnInit {
-  events: any = []
+  events: any //IEvent[]
   constructor(private eventService: EventService, private route: ActivatedRoute) {
     
   }

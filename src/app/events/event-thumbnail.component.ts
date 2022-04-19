@@ -1,6 +1,7 @@
 // COMPONENTE FIGLIO
 import { NgSwitchDefault } from "@angular/common";
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { IEvent } from "./service/event.model";
 
 @Component({
     selector: 'event-thumbnail',
@@ -17,9 +18,9 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
         </div>
         <div>Price: {{event?.price}}\$</div>
         <div>Image: <img src="{{event.imageUrl}}" class="foto"></div>
-        <div>Adress: {{event?.location.address}}</div>
-        <div>City: {{event?.location.city}}</div>
-        <div>Country: {{event?.location.country}}</div>
+        <div>Adress: {{event.location?.address}}</div>
+        <div>City: {{event.location?.city}}</div>
+        <div>Country: {{event.location?.country}}</div>
         <div><button (click)="clickMe()">Click!</button></div>
     </div>
     `
@@ -27,7 +28,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 export class EventThumbnailComponent{
     /* INPUT È UN DECORATORE CHE DICE AD ANGULAR CHE QUESTO EVENTO VERRA' PASSATO AD UN ALTRO COMPONENTE */
-    @Input() event: any
+    @Input() event: any //IEvent
     @Output() clicked = new EventEmitter()
 
     getStartTimeClass(): any {
