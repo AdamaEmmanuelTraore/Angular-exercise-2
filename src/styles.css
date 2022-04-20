@@ -119,4 +119,15 @@ h1{
     margin-left: 680px;
     cursor: pointer;
   }
+  div{
+    color: white;
+  }
+  .col-md-6{
+    background-color: black;
+    cursor: pointer;
+  }
+  .row{
+    background-color: blue;
+    cursor: pointer;
+  }
   
