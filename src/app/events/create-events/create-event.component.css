@@ -1,0 +1,23 @@
+label{
+    color: white;
+}
+.error input{
+    background-color: rgb(255, 170, 170);
+}
+.error ::-webkit-input-placeholder{
+    color: #999;
+}
+.error ::-moz-placeholder{
+    color: #999;
+}
+.error :-moz-placeholder{
+    color: #999;
+}
+.error :-ms-input-placeholder{
+    color: #999;
+}
+em{
+    align-items: center;
+    color: red;
+    padding-left: 10px;
+}
