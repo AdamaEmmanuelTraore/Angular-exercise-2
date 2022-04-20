@@ -11,7 +11,7 @@ import { AuthenticationService } from '../login/authentication.service';
 export class ProfileComponent implements OnInit {
   isDirty: boolean = true
   profileForm!: FormGroup
-  private firstName!: FormControl
+  public firstName!: FormControl
   private lastName!: FormControl;
   constructor(private authenticate: AuthenticationService, private router: Router) {
 
@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
 
   // VISUALIZZERO' IL NOME E COGNOME NELLE CASELLE NELLA SESSIONE PROFILE
   ngOnInit() {
-    this.firstName = new FormControl(this.authenticate.currentUser.firstName, Validators.required)
+    this.firstName = new FormControl(this.authenticate.currentUser.firstName, [Validators.required, Validators.pattern('[a-z-A-Z].*')])
     this.lastName = new FormControl(this.authenticate.currentUser.lastName, Validators.required)
     this.profileForm = new FormGroup({
       firstName: this.firstName,
@@ -37,9 +37,9 @@ export class ProfileComponent implements OnInit {
   }
   // PER VISUALIZZARE GLI ERRORI
   validateFirstName() {
-    return this.firstName.invalid || this.firstName.untouched
+    return this.firstName.valid || this.firstName.untouched
   }
   validateLastName() {
-    return this.lastName.invalid || this.lastName.untouched
+    return this.lastName.valid || this.lastName.untouched
   }
 }

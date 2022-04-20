@@ -16,3 +16,8 @@ label{
 .error :-ms-input-placeholder{
     color: #999;
 }
+em{
+    align-items: center;
+    color: red;
+    padding-left: 10px;
+}

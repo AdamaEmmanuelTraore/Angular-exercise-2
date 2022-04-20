@@ -6,10 +6,12 @@
       <div class="form-group" [ngClass]="{'error': !validateFirstName()}">
         <label for="firstName">First Name:</label>
         <input formControlName="firstName" id="firstName" type="text" class="form-control" placeholder="First Name..." />
+        <em *ngIf="!validateFirstName()">(Required! And must start with a letter)</em>
       </div>
       <div class="form-group" [ngClass]="{'error': !validateLastName()}">
         <label for="lastName">Last Name:</label>
         <input formControlName="lastName" id="lastName" type="text" class="form-control" placeholder="Last Name..." />
+        <em *ngIf="!validateLastName()">(Required! And must start with a letter)</em>
       </div>
 
       <button type="submit" class="btn btn-primary">Save</button>
