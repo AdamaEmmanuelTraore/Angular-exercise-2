@@ -14,10 +14,7 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
 import { EventListResolver } from './events/events-list-resolver.service';
 import { AuthenticationService } from './user/login/authentication.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { CreateEventComponent } from './events/create-events/create-event.component';
-=======
->>>>>>> 7c87e947b023d7f910708edb23e9765c091def64
 import { SessionListComponent } from './events/event-details/session.list.component';
 
 @NgModule({
@@ -27,10 +24,7 @@ import { SessionListComponent } from './events/event-details/session.list.compon
     EventThumbnailComponent,
     NavbarComponent,
     EventDetails,
-<<<<<<< HEAD
-=======
     CreateEventComponent,
->>>>>>> 7c87e947b023d7f910708edb23e9765c091def64
     Error404Component,
     SessionListComponent
   ],
