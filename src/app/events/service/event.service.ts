@@ -5,13 +5,19 @@ import { IEvent } from "./event.model";
 @Injectable()
 // È QUI CHE CREERO' LE MIE CHIAMATE XML
 export class EventService {
+
     getEventList(): Observable<IEvent[]> {
       let subject= new Subject<IEvent[]>() // È UN OSSERVABILE (che serve per rendere asincrono i miei dati)
       setTimeout(() => {subject.next(EVENTS); subject.complete();}, 100) // QUI SIMULO L'ASSINCRONIA CON "setTimeOut"(cosi facendo decido il tempo di caricamento dei dati)
         return subject
     }
-    getElement(id: number): any /* IEvent*/ {
+    getElement(id: number):any {
       return EVENTS.find(event => event.id === id)
+    }
+    SaveEvent(event: any) {
+      event.id = 999 // ASSEGNO UN EVENT ID A 999
+      event.session = [] // IMPOSTO UN ARRAY VUOTO
+      EVENTS.push(event) // INSERISCO IL MIO ARRAY VUOTO IN EVENT
     }
 }
 
