@@ -7,7 +7,7 @@ import { IEvent } from "./service/event.model";
     selector: 'event-thumbnail',
     template: `
     <div [routerLink]="['/events', event.id]" class="infos">
-        <div><h1>{{event.name}}</h1></div>
+        <div><h1>{{event.name | uppercase}}</h1></div>
         <div>Data: {{event?.date}}</div>
    
         <div [ngClass]="getStartTimeClass()" [ngSwitch]="event?.time">
