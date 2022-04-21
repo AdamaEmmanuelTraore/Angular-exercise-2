@@ -1,4 +1,4 @@
-import { Component} from "@angular/core";
+import { Component, OnInit} from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { IEvent } from "../service/event.model";
 import { EventService } from "../service/event.service";
@@ -8,8 +8,9 @@ import { EventService } from "../service/event.service";
     templateUrl: './event-details.component.html'
 })
 
-export class EventDetails {
+export class EventDetails implements OnInit {
     event!: IEvent // QUI RICCHIAMO IL MIO SERVIZIO   |   QUI CHIAMO UN COSTRUTTO/SERVIZIO CHE MI PERMETTERA' DI NON SPECIFICARE L'ID
+    filterBy: string = 'all' // QUI CREO UNA NUOVA PROPRIETA' PER FILTRARE I DATI
     constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }

@@ -25,6 +25,15 @@
     <br>
     <br>
     
-    <h1>Sessions</h1>
-    <session-list [sessions]="event.sessions"></session-list>
+    <div class="col-md-2">
+      <h1>Sessions</h1>
+    </div>
+    <div class="col-md-7">
+      <!--QUI CREO IL DISPLAY PER FILTRARE I MIEI DATI-->
+      <button class="btn btn-default" [class.active]="filterBy==='all'" (click)="filterBy='all'">All</button>
+      <button class="btn btn-default" [class.active]="filterBy==='beginner'" (click)="filterBy='beginner'">Beginner</button> 
+      <button class="btn btn-default" [class.active]="filterBy==='intermediate'" (click)="filterBy='intermediate'">Intermediate</button>
+      <button class="btn btn-default" [class.active]="filterBy==='advanced'" (click)="filterBy='advanced'">Advanced</button>
+    </div>
+      <session-list [filterBy]="filterBy" [sessions]="event.sessions"></session-list>
   </div> 
