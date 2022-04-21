@@ -8,7 +8,7 @@ import { IEvent } from "./service/event.model";
     template: `
     <div [routerLink]="['/events', event.id]" class="infos">
         <div><h1>{{event.name | uppercase}}</h1></div>
-        <div>Data: {{event?.date}}</div>
+        <div>Data: {{event?.date | date: 'd/M/y'}}</div>
    
         <div [ngClass]="getStartTimeClass()" [ngSwitch]="event?.time">
             Time: {{event?.time}}
@@ -16,7 +16,7 @@ import { IEvent } from "./service/event.model";
             <span *ngSwitchCase="'10:00 am'">(Late start)</span>
             <span *ngSwitchDefault>(Normal start)</span>
         </div>
-        <div>Price: {{event?.price}}\$</div>
+        <div>Price: {{event?.price | currency: 'USD'}}</div>
         <div>Image: <img src="{{event.imageUrl}}" class="foto"></div>
         <div>Adress: {{event.location?.address}}</div>
         <div>City: {{event.location?.city}}</div>

@@ -16,6 +16,7 @@ import { AuthenticationService } from './user/login/authentication.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateEventComponent } from './events/create-events/create-event.component';
 import { SessionListComponent } from './events/event-details/session.list.component';
+import { DurationPipe } from './events/service/duration.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SessionListComponent } from './events/event-details/session.list.compon
     EventDetails,
     CreateEventComponent,
     Error404Component,
-    SessionListComponent
+    SessionListComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
