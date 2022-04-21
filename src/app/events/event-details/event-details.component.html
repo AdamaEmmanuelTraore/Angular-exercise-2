@@ -28,6 +28,10 @@
     <div class="col-md-2">
       <h1>Sessions</h1>
     </div>
+    <div>
+      <button [class.active]="sortBy==='name'" (click)="sortBy='name'">By Name</button>
+      <button [class.active]="sortBy==='name'" (click)="sortBy='votes'">By Votes</button>
+    </div>
     <div class="col-md-7">
       <!--QUI CREO IL DISPLAY PER FILTRARE I MIEI DATI-->
       <button class="btn btn-default" [class.active]="filterBy==='all'" (click)="filterBy='all'">All</button>
@@ -35,5 +39,5 @@
       <button class="btn btn-default" [class.active]="filterBy==='intermediate'" (click)="filterBy='intermediate'">Intermediate</button>
       <button class="btn btn-default" [class.active]="filterBy==='advanced'" (click)="filterBy='advanced'">Advanced</button>
     </div>
-      <session-list [filterBy]="filterBy" [sessions]="event.sessions"></session-list>
+      <session-list [sortBy]="sortBy" [filterBy]="filterBy" [sessions]="event.sessions"></session-list>
   </div> 

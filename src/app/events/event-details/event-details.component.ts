@@ -11,6 +11,8 @@ import { EventService } from "../service/event.service";
 export class EventDetails implements OnInit {
     event!: IEvent // QUI RICCHIAMO IL MIO SERVIZIO   |   QUI CHIAMO UN COSTRUTTO/SERVIZIO CHE MI PERMETTERA' DI NON SPECIFICARE L'ID
     filterBy: string = 'all' // QUI CREO UNA NUOVA PROPRIETA' PER FILTRARE I DATI
+    sortBy: string = 'votes' // QUI CREO UNA NUOVA PROPRIETA' PER ORDINARE I DATI
+
     constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }
