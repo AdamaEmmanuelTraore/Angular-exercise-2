@@ -12,6 +12,6 @@ export class EventListResolver implements Resolve<any> {
 
     }
     resolve() {
-        return this.eventService.getEventList().pipe(map(events => events)) // map MI DA ACCESSO AGLI EVENTI CHE VENGONO TRASMESSI SU QUEL FLUSSO
+        return this.eventService.getEventList()
     }
 }
