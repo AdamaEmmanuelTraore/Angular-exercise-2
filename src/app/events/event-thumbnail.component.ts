@@ -17,7 +17,6 @@ import { IEvent } from "./service/event.model";
             <span *ngSwitchDefault>(Normal start)</span>
         </div>
         <div>Price: {{event?.price | currency: 'USD'}}</div>
-        <div>Image: <img src="{{event.imageUrl}}" class="foto"></div>
         <div>Adress: {{event.location?.address}}</div>
         <div>City: {{event.location?.city}}</div>
         <div>Country: {{event.location?.country}}</div>
