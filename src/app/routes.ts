@@ -2,7 +2,7 @@ import {Routes} from '@angular/router'
 import { Error404Component } from './errors/404.component';
 import { CreateEventComponent } from './events/create-events/create-event.component';
 import { EventDetails } from "./events/event-details/event-details.component";
-import { EventRouteActivator } from './events/event-details/event-route-activator.service';
+import { EventResolver } from './events/event-resolver.service';
 import { EventListResolver } from './events/events-list-resolver.service';
 import { EventsListComponent } from "./events/events-list.component";
 
@@ -10,7 +10,7 @@ import { EventsListComponent } from "./events/events-list.component";
 export const appRoutes: Routes = [
     {path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']},
     {path:'events', component: EventsListComponent, resolve: {events: EventListResolver}},
-    {path: 'events/:id', component: EventDetails, canActivate: [EventRouteActivator]},
+    {path: 'events/:id', component: EventDetails, resolve: {events: EventResolver}},
     {path: '404', component: Error404Component},
     {path: '', redirectTo: '/events', pathMatch: 'full'},
 

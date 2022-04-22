@@ -17,12 +17,8 @@ export class EventDetails implements OnInit {
 
     }
     ngOnInit() {
-        this.route.params.forEach((params: Params) => {
-                                    // IL + QUI SERVE A CASTARLO/TRASMETTERLO COME NUMERO
-            this.eventService.getElement(+params['id']).subscribe((event: IEvent) => {
-                this.event = event
-            })
-
+        this.route.data.forEach((data) => {
+            this.event = data['events']
         })
     }
 }

@@ -10,7 +10,6 @@ import { EventDetails } from './events/event-details/event-details.component';
 import { RouterModule } from '@angular/router';
 import {appRoutes} from './routes'
 import { Error404Component } from './errors/404.component';
-import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { EventListResolver } from './events/events-list-resolver.service';
 import { AuthenticationService } from './user/login/authentication.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +17,7 @@ import { CreateEventComponent } from './events/create-events/create-event.compon
 import { SessionListComponent } from './events/event-details/session.list.component';
 import { DurationPipe } from './events/service/duration.pipe';
 import { HttpClientModule } from "@angular/common/http";
+import { EventResolver } from './events/event-resolver.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { HttpClientModule } from "@angular/common/http";
   ],
   providers: [
     EventService,
-    EventRouteActivator,
+    EventResolver,
     EventListResolver,
     {
       provide: 'canDeactivateCreateEvent',
