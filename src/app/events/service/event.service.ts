@@ -1,16 +1,30 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, Subject } from "rxjs";
+import { catchError, Observable, of } from "rxjs";
 import { IEvent } from "./event.model";
 
 @Injectable()
 // È QUI CHE CREERO' LE MIE CHIAMATE XML
 export class EventService {
+   // QUI FACCIO LE MIE CHIAMATE AL SERVER
+   constructor(private http: HttpClient) {
 
+   }
+
+  // È UN OSSERVABILE (che serve per rendere asincrono i miei dati)
     getEventList(): Observable<IEvent[]> {
-      let subject= new Subject<IEvent[]>() // È UN OSSERVABILE (che serve per rendere asincrono i miei dati)
-      setTimeout(() => {subject.next(EVENTS); subject.complete();}, 100) // QUI SIMULO L'ASSINCRONIA CON "setTimeOut"(cosi facendo decido il tempo di caricamento dei dati)
-        return subject
+      // QUI IL SERVER DEVE RESTITUIRE CON IL METODO 'GET' LA RISPOSTA (L'URL '/api/events')
+      return this.http.get<IEvent[]>('/api/events')
+        .pipe(catchError(this.handleError<IEvent[]>('getEventList', []))) // QUI CHIAMO IL PIPE E UN METODO RxJS(catchError)
     }
+    // QUI GESTISCO GLI ERRORI(CON IL SEGUENTE METODO) IN CASO DI ERRORE DAL SERVER
+    private handleError<T> (operation = 'operation', result?: T) {
+      return (error: any): Observable<T> => {
+        console.error(error) // PER PERSONALIZZARE L'ERRORE, AGGIUNGO UN PO' PIU DI CODICE QUI
+        return of(result as T)
+      }
+    }
+
     getElement(id: number):any {
       return EVENTS.find(event => event.id === id)
     }
