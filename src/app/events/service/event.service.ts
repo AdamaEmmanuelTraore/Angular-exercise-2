@@ -10,7 +10,6 @@ export class EventService {
    constructor(private http: HttpClient) {
 
    }
-
   // È UN OSSERVABILE (che serve per rendere asincrono i miei dati)
     getEventList(): Observable<IEvent[]> {
       // QUI IL SERVER DEVE RESTITUIRE CON IL METODO 'GET' LA RISPOSTA (L'URL '/api/events')
@@ -25,9 +24,12 @@ export class EventService {
       }
     }
 
-    getElement(id: number):any {
-      return EVENTS.find(event => event.id === id)
+
+    getElement(id: number):Observable<IEvent> {
+      return this.http.get<IEvent>('/api/events/' + id)
+      .pipe(catchError(this.handleError<IEvent>('getEventList')))
     }
+    // FORSE PER SALVARE UN EVENTO?
     SaveEvent(event: any) {
       event.id = 999 // ASSEGNO UN EVENT ID A 999
       event.session = [] // IMPOSTO UN ARRAY VUOTO

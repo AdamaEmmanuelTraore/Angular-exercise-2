@@ -1,5 +1,5 @@
 import { Component, OnInit} from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Params } from "@angular/router";
 import { IEvent } from "../service/event.model";
 import { EventService } from "../service/event.service";
 
@@ -16,7 +16,13 @@ export class EventDetails implements OnInit {
     constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }
-    ngOnInit() {                // IL + QUI SERVE A CASTARLO/TRASMETTERLO COME NUMERO
-        this.event = this.eventService.getElement(+this.route.snapshot.params['id'])
+    ngOnInit() {
+        this.route.params.forEach((params: Params) => {
+                                    // IL + QUI SERVE A CASTARLO/TRASMETTERLO COME NUMERO
+            this.eventService.getElement(+params['id']).subscribe((event: IEvent) => {
+                this.event = event
+            })
+
+        })
     }
 }
