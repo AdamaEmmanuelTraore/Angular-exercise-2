@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateEventComponent } from './events/create-events/create-event.component';
 import { SessionListComponent } from './events/event-details/session.list.component';
 import { DurationPipe } from './events/service/duration.pipe';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DurationPipe } from './events/service/duration.pipe';
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     EventService,
