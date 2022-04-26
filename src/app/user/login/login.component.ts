@@ -18,6 +18,7 @@ import { AuthenticationService } from "./authentication.service";
 export class LoginComponent {
     userName: any
     password: any
+    loginInvalid = false
 
     constructor(private authenticate: AuthenticationService, private router: Router) {
 
@@ -25,7 +26,13 @@ export class LoginComponent {
     
     login(formValues: any) {
         this.authenticate.loginUser(formValues.userName, formValues.passaword)
-        this.router.navigate(['user/profile'])
+        .subscribe((resp: any) => {
+            if(!resp) {
+                this.loginInvalid = true
+            } else {
+                this.router.navigate(['user/profile'])
+            }
+        })
     }
     stop() {
         this.router.navigate(['events'])

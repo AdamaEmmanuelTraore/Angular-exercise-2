@@ -1,7 +1,7 @@
 // COMPONENTE FIGLIO
-import { NgSwitchDefault } from "@angular/common";
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { IEvent } from "./service/event.model";
+import { EventService } from "./service/event.service";
 
 @Component({
     selector: 'event-thumbnail',
@@ -28,7 +28,13 @@ import { IEvent } from "./service/event.model";
 export class EventThumbnailComponent{
     /* INPUT È UN DECORATORE CHE DICE AD ANGULAR CHE QUESTO EVENTO VERRA' PASSATO AD UN ALTRO COMPONENTE */
     @Input() event!: IEvent
+    eventx!: IEvent[]
     @Output() clicked = new EventEmitter()
+    isDirty:boolean = true
+
+    constructor(private service: EventService) {
+
+    }
 
     getStartTimeClass(): any {
         if(this.event && this.event.time=== "8:00 am"){

@@ -20,6 +20,7 @@ export class SessionListComponent implements OnChanges {
             : this.visibleSessions.sort(this.sortByVotesDesc)
         }
     }
+    // METODO PER FILTRARE
     filterSessions(filter: any) {
         if(filter === 'all') {
             this.visibleSessions = this.sessions.slice(0)
@@ -29,6 +30,7 @@ export class SessionListComponent implements OnChanges {
             })
         }
     }
+    // METODO PER ORDINARE
     sortByNameAsc(s1: ISession, s2: ISession) {
         if(s1.name > s2.name) {
             return 1
