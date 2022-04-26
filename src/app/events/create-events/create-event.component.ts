@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
+import { EventService } from "../service/event.service";
 
 @Component({
     templateUrl: `./create-event.component.html`
@@ -15,11 +16,14 @@ export class CreateEventComponent {
     public price!: FormControl
     public imageUrl!: FormControl
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private service: EventService) {
 
     }
     saveEvent(formValues: any) {
-        console.log(formValues)
+      this.service.SaveEvent(formValues).subscribe(() => {
+        this.isDirty = false
+        this.router.navigate(['/events'])
+      })
     }
 
     stop() {
