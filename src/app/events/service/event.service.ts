@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, Observable, of } from "rxjs";
 import { IEvent } from "./event.model";
@@ -27,13 +27,15 @@ export class EventService {
 
     getElement(id: number):Observable<IEvent> {
       return this.http.get<IEvent>('/api/events/' + id)
-      .pipe(catchError(this.handleError<IEvent>('getEventList')))
+      .pipe(catchError(this.handleError<IEvent>('getElement')))
     }
+
+
     // FORSE PER SALVARE UN EVENTO?
     SaveEvent(event: any) {
-      event.id = 999 // ASSEGNO UN EVENT ID A 999
-      event.session = [] // IMPOSTO UN ARRAY VUOTO
-      EVENTS.push(event) // INSERISCO IL MIO ARRAY VUOTO IN EVENT
+      let options: any = { Headers: new HttpHeaders({'Content-Type': 'application/json'})};
+      return this.http.post<IEvent>('/api/events', event, options)
+      .pipe(catchError(this.handleError<IEvent>('SaveEvent')))
     }
 }
 
