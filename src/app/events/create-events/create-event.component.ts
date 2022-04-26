@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
+import { IEvent } from "../service/event.model";
 import { EventService } from "../service/event.service";
 
 @Component({
@@ -19,7 +20,7 @@ export class CreateEventComponent {
     constructor(private router: Router, private service: EventService) {
 
     }
-    saveEvent(formValues: any) {
+    saveEvent(formValues: IEvent) {
       this.service.SaveEvent(formValues).subscribe(() => {
         this.isDirty = false
         this.router.navigate(['/events'])
