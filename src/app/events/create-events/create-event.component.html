@@ -2,24 +2,20 @@
 <hr>
 <div class="col-md-6">
   <form #newEventForm="ngForm" (ngSubmit)="saveEvent(newEventForm.value)" autocomplete="off" novalidate> <!--RIVEDERE QUESTA PARTE PER L'INSERIMENTO DEI FORM-->
-    <div class="form-group" [ngClass]="{'error': !validateName()}">
+    <div class="form-group">
       <label for="eventName">Event Name:</label>
-      <em *ngIf="!validateName()">(Required)</em>
       <input (ngModel)="newEvent.name" name="name" required id="name" type="text" class="form-control" placeholder="Name of your event..." />
     </div>
-    <div class="form-group" [ngClass]="{'error': validateDate()}">
+    <div class="form-group">
       <label for="eventDate">Event Date:</label>
-      <em *ngIf="validateDate()">(Required)</em>
       <input (ngModel)="newEvent.date" name="date" required id="eventDate" type="text" class="form-control" placeholder="format (mm/dd/yyyy)..." />
     </div>
-    <div class="form-group" [ngClass]="{'error': validateTime()}">
+    <div class="form-group">
       <label for="eventTime">Event Time:</label>
-      <em *ngIf="validateTime()">(Required)</em>
       <input (ngModel)="newEvent.time" name="time" required id="eventTime" type="text" class="form-control" placeholder="start and end time..." />
     </div>
-    <div class="form-group" [ngClass]="{'error': validatePrice()}">
+    <div class="form-group">
       <label for="eventPrice">Event Price:</label>
-      <em *ngIf="validatePrice()">(Required)</em>
       <input (ngModel)="newEvent.price" name="price" required id="eventPrice" type="text" type="number" class="form-control" placeholder="event price..." />
     </div>
     
@@ -40,10 +36,8 @@
       <label for="onlineUrl">Online Url:</label>
       <input (ngModel)="newEvent.onlineUrl" name="onlineUrl" id="onlineUrl" type="text" class="form-control" placeholder="Online Url..." />
     </div>
-    <div class="form-group" [ngClass]="{'error': validateImageUrl()}">
+    <div class="form-group">
       <label for="imageUrl">Image:</label>
-      <em *ngIf="validateImageUrl()">(Required)</em>
-      <em *ngIf="validateImageUrl()">Must be a png or jpg url</em>
       <input (ngModel)="newEvent.imageUrl" name="imageUrl" required pattern=".*\/.*.(png|jpg)" id="imageUrl" type="text" class="form-control" placeholder="url of image..." />
       <img />
     </div>

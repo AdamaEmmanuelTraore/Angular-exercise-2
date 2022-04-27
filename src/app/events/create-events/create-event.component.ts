@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
 import { IEvent } from "../service/event.model";
 import { EventService } from "../service/event.service";
@@ -11,11 +10,6 @@ import { EventService } from "../service/event.service";
 export class CreateEventComponent {
     isDirty:boolean = true
     newEvent: any
-    public name!: FormControl
-    public date!: FormControl
-    public time!: FormControl
-    public price!: FormControl
-    public imageUrl!: FormControl
 
     constructor(private router: Router, private service: EventService) {
 
@@ -30,21 +24,4 @@ export class CreateEventComponent {
     stop() {
         this.router.navigate(['/events'])
     }
-      // PER VISUALIZZARE GLI ERRORI
-  validateName() {
-    return this.name.valid || this.name.untouched
-  }
-  validateDate() {
-    return this.date.valid || this.date.untouched
-  }
-  validateTime() {
-    return this.time.valid || this.time.untouched
-  }
-  validatePrice() {
-    return this.price.valid || this.price.untouched
-  }
-  validateImageUrl() {
-    return this.imageUrl.valid || this.imageUrl.touched
-  }
-
 }
