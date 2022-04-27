@@ -21,6 +21,7 @@ import { EventService } from "./service/event.service";
         <div>City: {{event.location?.city}}</div>
         <div>Country: {{event.location?.country}}</div>
         <div><button (click)="clickMe()">Click!</button></div>
+        <div><button (click)="deleteMe()">Delete</button></div>
     </div>
     `
 })
@@ -47,5 +48,8 @@ export class EventThumbnailComponent{
     }
     clickMe() {
         this.clicked.emit(this.event.name)
+    }
+    deleteMe() {
+
     }
 }

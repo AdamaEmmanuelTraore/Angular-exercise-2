@@ -39,6 +39,19 @@ export class EventService {
     }
 
 
+
+
+    // METODO PER ELIMINARE UN EVENTO
+    deleteEvent(event: any) {
+      return this.http.delete<IEvent>('/api/events', event)
+      .pipe(catchError(this.handleError<IEvent>('SaveEvent')))
+    }
+
+
+
+
+
+
     // QUESTO SERVE PER FARE LA RICERCA NELLA BARRA DELLE RICERCHE
     searchSessions(searchTerm: string): Observable<ISession[]> {
       return this.http.get<ISession[]>('/api/sessions/search?search=' +searchTerm)

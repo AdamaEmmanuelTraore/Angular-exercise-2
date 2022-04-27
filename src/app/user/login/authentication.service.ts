@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, of } from "rxjs";
+import { catchError, Observable, of } from "rxjs";
 import { IUser } from "../user.model";
 
 // IN QUESTO COMPONENTE IMPLENENTO LA LOGICA PER LA LOGIN
@@ -13,7 +13,7 @@ export class AuthenticationService {
 
     }
 
-    loginUser(userName: string, password: string) {
+    loginUser(userName: string, password: string):Observable<boolean> {
 
         let loginInfo = {username: userName, password: password}
         let options: any = {Headers: new HttpHeaders({'Content-Type': 'application/json'})} // SERVE A CREARE DELLE OPZIONI
@@ -21,10 +21,12 @@ export class AuthenticationService {
         this.http.post('/api/login', loginInfo, options)
         .pipe(tap(data => {
             this.currentUser = <IUser>data['user']
+            return of(true)
         }))
         .pipe(catchError(err => {
             return of(false)
         }))
+        return of(true)
     }
 
     isAuthenticated() {
