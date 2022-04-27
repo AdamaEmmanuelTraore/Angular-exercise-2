@@ -24,14 +24,14 @@ export class EventService {
       }
     }
 
-
+    // METODO PER VISUALIZZAZIONE DEL SINGOLO EVENTO
     getElement(id: number):Observable<IEvent> {
       return this.http.get<IEvent>('/api/events/' + id)
       .pipe(catchError(this.handleError<IEvent>('getElement')))
     }
 
 
-    // FORSE PER SALVARE UN EVENTO?
+    // FORSE PER SALVARE/CREARE UN EVENTO?
     SaveEvent(event: any) {
       let options: any = { Headers: new HttpHeaders({'Content-Type': 'application/json'})};
       return this.http.post<IEvent>('/api/events', event, options)
