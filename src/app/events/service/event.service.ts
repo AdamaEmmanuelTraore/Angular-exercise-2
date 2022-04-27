@@ -12,7 +12,7 @@ export class EventService {
    }
   // È UN OSSERVABILE (che serve per rendere asincrono i miei dati)
     getEventList(): Observable<IEvent[]> {
-      // QUI IL SERVER DEVE RESTITUIRE CON IL METODO 'GET' LA RISPOSTA (L'URL '/api/events')
+      // QUI IL SERVER DEVE RESTITUIRE CON IL METODO 'GET' LA LISTA DI TUTTI GLI EVENTI (CHE È LA RISPOSTA) (L'URL '/api/events')
       return this.http.get<IEvent[]>('/api/events')
         .pipe(catchError(this.handleError<IEvent[]>('getEventList', []))) // QUI CHIAMO IL PIPE E UN METODO RxJS(catchError)
     }
