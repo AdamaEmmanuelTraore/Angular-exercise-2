@@ -31,7 +31,7 @@ export class EventService {
     }
 
 
-    // FORSE PER SALVARE/CREARE UN EVENTO?
+    // METODO PER SALVARE/CREARE UN EVENTO
     SaveEvent(event: any) {
       let options: any = { Headers: new HttpHeaders({'Content-Type': 'application/json'})};
       return this.http.post<IEvent>('/api/events', event, options)
